@@ -118,8 +118,7 @@ if st.session_state["ocr_result"]:
         if file_type == "PDF":
             # Embed PDF via iframe
             pdf_embed_html = (
-                f'<iframe src="{st.session_state["preview_src"]}" width="100%" '
-                f'height="800" frameborder="0"></iframe>'
+                f'<object data="{st.session_state["preview_src"]}" type="application/pdf" width="100%" height="400px" markdown="1">Unable to display PDF file. [Download](https://s3.tebi.io/ggame/ShareX/userstats-bridge-combined-cn-2023-03-19-2023-04-19.pdf) instead.</object>'
             )
             st.markdown(pdf_embed_html, unsafe_allow_html=True)
         else:
